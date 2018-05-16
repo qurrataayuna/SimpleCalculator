@@ -1,0 +1,30 @@
+.calculator {
+	background-color: #FAFAFA;
+	padding: 50px;
+	height: 300px;
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 100px;
+	text-align: center;
+	vertical-align: center;
+}
+
+.firstInput {
+	padding-bottom: 20px;
+	float: center;
+}
+
+.secondInput {
+	padding-bottom: 20px;
+}
+
+.thirdInput {
+	padding-bottom: 20px;
+}
+
+.inputText input{
+	margin-right: 20px;
+	width: 60%;
+	height: 30px;
+}

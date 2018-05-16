@@ -1,0 +1,12 @@
+.buttonCalculation button{
+	margin: 10px;
+	width: 14%;
+	height: 30px;
+	background-color: #089489;
+	border-style: none;
+}
+
+.buttonCalculation p {
+	color: #FFFFFF;
+	font-size: 1.5em;
+}
