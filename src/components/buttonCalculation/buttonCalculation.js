@@ -16,42 +16,95 @@ class ButtonCalculation extends Component {
 	}
 
 	addition() {
-		var a = parseInt(this.props.in1, 10);
-		var b = parseInt(this.props.in2, 10);
-		var c = parseInt(this.props.in3, 10);
-		var hasil = a+b+c;
-		this.setState({result: {hasil}});
-		item.push('The result is: ' + hasil);
+		var hasil = null;
+		if(this.props.check1 === true && this.props.check2 === true && this.props.check3 === true){
+			hasil = parseFloat(this.props.in1, 10) + parseFloat(this.props.in2, 10) + parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === false && this.props.check2 === true && this.props.check3 === true){
+			hasil = parseFloat(this.props.in2, 10) + parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === true && this.props.check2 === false && this.props.check3 === true){
+			hasil = parseFloat(this.props.in1, 10) + parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === true && this.props.check2 === true && this.props.check3 === false){
+			hasil = parseFloat(this.props.in1, 10) + parseFloat(this.props.in2, 10);
+		} else {
+			alert('There must be an error with your input!');
+		}
+
+		if(isNaN(hasil)){
+			alert('Input must not be empty!');
+		} else {
+			this.setState({result: {hasil}});
+			item.push('The result is: ' + hasil);
+		}
 	}
 
 	substraction() {
-		var a = parseInt(this.props.in1, 10);
-		var b = parseInt(this.props.in2, 10);
-		var c = parseInt(this.props.in3, 10);
-		var hasil = a-b-c;
-		this.setState({result: {hasil}});
-		item.push('The result is: ' + hasil);
+		var hasil = null;
+		if(this.props.check1 === true && this.props.check2 === true && this.props.check3 === true){
+			hasil = parseFloat(this.props.in1, 10) - parseFloat(this.props.in2, 10) - parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === false && this.props.check2 === true && this.props.check3 === true){
+			hasil = parseFloat(this.props.in2, 10) - parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === true && this.props.check2 === false && this.props.check3 === true){
+			hasil = parseFloat(this.props.in1, 10) - parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === true && this.props.check2 === true && this.props.check3 === false){
+			hasil = parseFloat(this.props.in1, 10) - parseFloat(this.props.in2, 10);
+		} else {
+			alert('There must be an error with your input!');
+		}
+
+		if(isNaN(hasil)){
+			alert('Input must not be empty!');
+		} else {
+			this.setState({result: {hasil}});
+			item.push('The result is: ' + hasil);
+		}
 	}
 
 	multiplication() {
-		var a = parseInt(this.props.in1, 10);
-		var b = parseInt(this.props.in2, 10);
-		var c = parseInt(this.props.in3, 10);
-		var hasil = a*b*c;
-		this.setState({result: {hasil}});
-		item.push('The result is: ' + hasil);
+		var hasil = null;
+		if(this.props.check1 === true && this.props.check2 === true && this.props.check3 === true){
+			hasil = parseFloat(this.props.in1, 10) * parseFloat(this.props.in2, 10) * parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === false && this.props.check2 === true && this.props.check3 === true){
+			hasil = parseFloat(this.props.in2, 10) * parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === true && this.props.check2 === false && this.props.check3 === true){
+			hasil = parseFloat(this.props.in1, 10) * parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === true && this.props.check2 === true && this.props.check3 === false){
+			hasil = parseFloat(this.props.in1, 10) * parseFloat(this.props.in2, 10);
+		} else {
+			alert('There must be an error with your input!');
+		}
+
+		if(isNaN(hasil)){
+			alert('Input must not be empty!');
+		} else {
+			this.setState({result: {hasil}});
+			item.push('The result is: ' + hasil);
+		}
 	}
 
 	division() {
-		var a = parseInt(this.props.in1, 10);
-		var b = parseInt(this.props.in2, 10);
-		var c = parseInt(this.props.in3, 10);
-		var hasil = a/b/c;
-		this.setState({result: {hasil}});
-		item.push('The result is: ' + hasil);
+		var hasil = null;
+		if(this.props.check1 === true && this.props.check2 === true && this.props.check3 === true){
+			hasil = parseFloat(this.props.in1, 10) / parseFloat(this.props.in2, 10) / parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === false && this.props.check2 === true && this.props.check3 === true){
+			hasil = parseFloat(this.props.in2, 10) / parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === true && this.props.check2 === false && this.props.check3 === true){
+			hasil = parseFloat(this.props.in1, 10) / parseFloat(this.props.in3, 10);
+		} else if(this.props.check1 === true && this.props.check2 === true && this.props.check3 === false){
+			hasil = parseFloat(this.props.in1, 10) / parseFloat(this.props.in2, 10);
+		} else {
+			alert('There must be an error with your input!');
+		}
+
+		if(isNaN(hasil)){
+			alert('Input must not be empty!');
+		} else {
+			this.setState({result: {hasil}});
+			item.push('The result is: ' + hasil);
+		}
 	}
 
 	render() {
+		console.log(this.props);
 		return(
 			<div className='buttonCalculation'>
 				<button onClick={this.addition} >
