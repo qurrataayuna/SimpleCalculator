@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import './css/buttonCalculation.css';
 
+var item = [];
 class ButtonCalculation extends Component {
 	constructor() {
 		super();
+		this.state = {
+			result: ''
+		}
+
 		this.addition = this.addition.bind(this);
 		this.substraction = this.substraction.bind(this);
 		this.multiplication = this.multiplication.bind(this);
@@ -15,7 +20,8 @@ class ButtonCalculation extends Component {
 		var b = parseInt(this.props.in2, 10);
 		var c = parseInt(this.props.in3, 10);
 		var hasil = a+b+c;
-		alert(hasil);
+		this.setState({result: {hasil}});
+		item.push('The result is: ' + hasil);
 	}
 
 	substraction() {
@@ -23,7 +29,8 @@ class ButtonCalculation extends Component {
 		var b = parseInt(this.props.in2, 10);
 		var c = parseInt(this.props.in3, 10);
 		var hasil = a-b-c;
-		alert(hasil);
+		this.setState({result: {hasil}});
+		item.push('The result is: ' + hasil);
 	}
 
 	multiplication() {
@@ -31,7 +38,8 @@ class ButtonCalculation extends Component {
 		var b = parseInt(this.props.in2, 10);
 		var c = parseInt(this.props.in3, 10);
 		var hasil = a*b*c;
-		alert(hasil);
+		this.setState({result: {hasil}});
+		item.push('The result is: ' + hasil);
 	}
 
 	division() {
@@ -39,11 +47,11 @@ class ButtonCalculation extends Component {
 		var b = parseInt(this.props.in2, 10);
 		var c = parseInt(this.props.in3, 10);
 		var hasil = a/b/c;
-		alert(hasil);
+		this.setState({result: {hasil}});
+		item.push('The result is: ' + hasil);
 	}
 
 	render() {
-		console.log(this.item);
 		return(
 			<div className='buttonCalculation'>
 				<button onClick={this.addition} >
@@ -60,7 +68,7 @@ class ButtonCalculation extends Component {
 				</button>
 
 				<div className='resultCalculation'>
-					{this.item}
+					<h3>{item[item.length-1]}</h3>
 				</div>
 			</div>
 		);

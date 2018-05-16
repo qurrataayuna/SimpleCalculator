@@ -6,7 +6,11 @@
 	border-style: none;
 }
 
-.buttonCalculation p {
+.buttonCalculation button p {
 	color: #FFFFFF;
 	font-size: 1.5em;
+}
+
+.buttonCalculation p {
+	color: #000000;
 }
